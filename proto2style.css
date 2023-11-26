@@ -16,12 +16,21 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
+  /* .buttoncontainer {
+    
+    background-color: #3498db; 
+    color: #ffffff; 
+    padding: 10px; 
+    border-radius: 5px; 
+  } */
+  
   .button-container {
     display: grid;
-    grid-template-columns: repeat(16, auto);
-    justify-items: center; /* or other alignment values */
-    align-items: center; /* or other alignment values */
-  }
+    grid-template-columns: repeat(15, auto);
+    justify-items: center; 
+    align-items: center; 
+  } 
   
   
   button:hover {
