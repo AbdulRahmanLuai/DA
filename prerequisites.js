@@ -97,8 +97,7 @@ let subjectObjects = []
                 const childElement = document.createElement('button');
                 childElement.id = key;
                 childElement.textContent = key;
-                console.log((childElement.textContent).length);
-                console.log("!",childElement.textContent, "!");
+                
             
                 const tooltip = document.createElement('span');
                 tooltip.className = 'tooltip';
@@ -315,7 +314,6 @@ let subjectObjects = []
                 resetButton.textContent = 'Reset All'
                 parentElement.appendChild(resetButton)
                 resetButton.addEventListener('click', ()=>{
-                    console.log('resetting <><><><>')
                     subjectObjects.forEach(element => {
                         element.reset()
                     })
