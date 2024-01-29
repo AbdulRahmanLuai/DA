@@ -58,34 +58,35 @@ let subjectObjects = []
                 'CS 111':[],
                 'MATH 101':[],
                 'STAT 111':[],
-                'CS 210':['CS 111'],
-                'CS 250':['CS 210'],
-                'CS 142':['MATH 101'],
                 'CS 111L':[],
                 'STAT 101':[],
+                'CS 210':['CS 111'],
                 'CIS 260':['CIS 101', 'CS 210'],
-                'CS 351': ['CS 250', 'CS 142'],
+                'CS 250':['CS 210'],
+                'CS 142':['MATH 101'],
                 'BIT 221':['CIS 101'],
                 'BIT 381':['CIS 260'],
                 'CIS 260L':['CIS 260'],
                 'DA 201':['CIS 101'],
                 'DA 202':['CS 210'],
-                'DA 220':['DA 201', 'DA 202'],
-                'DA 210':['DA 201','DA 202'],
-                'MATH 241':['MATH 101'],
                 'CIS 464':['CIS 260'],
-                'CIS 240':['CIS 101', 'CS 210'],
-                'CYS 230':['CS 111', 'CIS 101'],
+                'MATH 241':['MATH 101'],
                 'DA 360':['DA 350'],
                 'DA 370':['DA 350'],
-                'DA 380':['STAT 111', 'CIS 260'],
-                'DA 450':['DA 350'],
-                'DA 460':['DA 330'],
-                'DA 330':['DA 201', 'CIS 260'],
                 'DA 480':['DA 350'],
                 'DA 340':['DA 202'],
                 'DA 350':['DA 202'],
                 'DA 470':['DA 370'],
+                'DA 450':['DA 350'],
+                'DA 460':['DA 330'],
+                
+                'CS 351': ['CS 250', 'CS 142'],
+                'DA 220':['DA 201', 'DA 202'],
+                'DA 210':['DA 201','DA 202'],
+                'CIS 240':['CIS 101', 'CS 210'],
+                'CYS 230':['CS 111', 'CIS 101'],
+                'DA 380':['STAT 111', 'CIS 260'],
+                'DA 330':['DA 201', 'CIS 260'],
                 'DA 499':[],
             
             }
@@ -96,6 +97,8 @@ let subjectObjects = []
                 const childElement = document.createElement('button');
                 childElement.id = key;
                 childElement.textContent = key;
+                console.log((childElement.textContent).length);
+                console.log("!",childElement.textContent, "!");
             
                 const tooltip = document.createElement('span');
                 tooltip.className = 'tooltip';
@@ -191,7 +194,7 @@ let subjectObjects = []
                     if (!this.is_taken){                        
                         this.change_color('red');
                         this.timeoutId = setTimeout(()=> {
-                            let initial_color = 'yellow';
+                            let initial_color = '#ffef00';
                             var available = ((this.indegree) == 0)
                             if (!available){
                                 initial_color = ''
@@ -230,7 +233,7 @@ let subjectObjects = []
                 }
 
                 glow(){
-                    this.change_color('white');
+                    this.change_color('#6a6a00');
                 }
                 deglow(){
                     this.change_color('');

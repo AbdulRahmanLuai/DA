@@ -1,33 +1,36 @@
 body {
-    background-color: black;
+    background-color:		#313131/* #727272 ;#C9BB8E*/
 }
 
 button {
 
-    padding-right: 20px; /*Adjust the value as needed*/
-    margin-right: 20px; /*Adjust the value as needed*/
-    margin-bottom: 20px;  /*Adjust the value as needed */
-    background-color: #4a4a4a;
+    /* padding-right: 20px;  */
+    margin-right: 20px; 
+    margin-bottom: 20px;
+    background-color: 	#aaaaaa; /*#727272;#f2f2f2;  #ffffe0;#4a4a4a*/
     color: #060404;
     border: none;
-    padding: 20px 20px;
-    font-size: 15px;
+    /* padding: 20px 20px; */
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100px;
+    height: 85px;
   }
 
-  /* .buttoncontainer {
+  .buttoncontainer {
     
     background-color: #3498db; 
     color: #ffffff; 
     padding: 10px; 
     border-radius: 5px; 
-  } */
+  }
   
   .button-container {
     display: grid;
-    grid-template-columns: repeat(15, auto);
+    grid-template-columns: repeat(11, auto);
     justify-items: center; 
     align-items: center; 
   } 
@@ -57,9 +60,11 @@ button {
 
   /* Style for the tooltip (hidden by default) */
   .tooltip {
+    font-size: 14px;
+    
     visibility: hidden;
     width: 120px;
-    background-color: #6079e9;
+    background-color: blue;
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -67,8 +72,8 @@ button {
     position: absolute;
     z-index: 1;
     top: 100%; /* Position the tooltip below the button */
-    left: 50%;
-    margin-left: -60px;
+    left: 0%;
+    margin-left: -20px;
     opacity: 0;
     transition: opacity 0.3s;
   }
@@ -84,7 +89,7 @@ button {
   }
 
 #resetButton {
-    background-color: blue;
+    background-color: 	blue;
 }
 
 
