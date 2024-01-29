@@ -33,9 +33,9 @@ button {
   } 
   
   
-  button:hover {
+  /* button:hover {
     background-color: #656565;
-  }
+  } */
   
   button:focus {
     outline: none;
@@ -46,7 +46,39 @@ button {
     transform: translateY(1px);
   }
 
-  
+  .hover-button {
+    /* padding: 10px 20px; */
+    /* background-color: #3498db; */
+    /* color: #fff; */
+    border: none;
+    cursor: pointer;
+    position: relative; 
+  }
+
+  /* Style for the tooltip (hidden by default) */
+  .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #6079e9;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%; /* Position the tooltip below the button */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  /* Show the tooltip when the button is hovered over */
+  .hover-button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+
+  }
   #mainDiv {
     line-height: 3; /* Adjust this value to increase or decrease the line spacing */
   }
@@ -54,3 +86,5 @@ button {
 #resetButton {
     background-color: blue;
 }
+
+

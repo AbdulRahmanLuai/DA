@@ -17,6 +17,42 @@ TODO:
 
 let subjectObjects = []
         function Initialize(){
+            SubjectNames = {
+                'CIS 101': "Introduction to information systems",
+                'CS 111': "Python",
+                'MATH 101': "Calculus1",
+                'STAT 111':"Principles of probability (1)",
+                'CS 210':"Object Oriented Programming",
+                'CS 250':"Data-Structures",
+                'CS 142':"Discrete Math",
+                'CS 111L':"Python Lab",
+                'STAT 101':"Principles of Statistics (1)",
+                'CIS 260':"Database systems",
+                'CS 351': "Analysis and Design of Algorithms",
+                'BIT 221':"Legal Aspects of Information Technology	",
+                'BIT 381':"Internet Application Development (WEB)",
+                'CIS 260L':"Database Lab",
+                'DA 201':"Data science Basics",
+                'DA 202':"Artificial Intelligence Basics",
+                'DA 220':"Data Science and Artificial Intelligence Programming",
+                'DA 210':"Computing Systems For Data science and Artificial Ontelligence",
+                'MATH 241': "Linear Algebra (1)",
+                'CIS 464':"Information Retrieval Systems",
+                'CIS 240':"Introduction to Software Engineering",
+                'CYS 230': "Cyber Security Principles",
+                'DA 360':"Pattern Recognition",
+                'DA 370':"Data Mining and Warehouses",
+                'DA 380':"Data Modeling and Simulation",
+                'DA 450':"Deep Learning",
+                'DA 460':"Big Data",
+                'DA 330':"Data Engineering and Analytics",
+                'DA 480':"Intelligent Mobile Robots",
+                'DA 340':"Knowledge Representation and Reasoning",
+                'DA 350':"Machine Learning and Neural Networks",
+                'DA 470':"Natural Language Processing and Text Mining",
+                'DA 499':"Graduation Project"
+            }
+
             prerequisites = {
                 'CIS 101':[],
                 'CS 111':[],
@@ -53,19 +89,24 @@ let subjectObjects = []
                 'DA 499':[],
             
             }
-
+            
             cnt = 0
             const parentElement = document.getElementById('mainDiv');
             Object.keys(prerequisites).forEach(key => {
-                childElement = document.createElement('button')
-                childElement.id = key
-                childElement.textContent = key
-                parentElement.appendChild(childElement)
-                cnt ++
-                
+                const childElement = document.createElement('button');
+                childElement.id = key;
+                childElement.textContent = key;
             
-                
-            })
+                const tooltip = document.createElement('span');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = SubjectNames[key];
+            
+                childElement.appendChild(tooltip);
+                childElement.classList.add('hover-button'); // Add the hover-button class
+            
+                parentElement.appendChild(childElement);
+                cnt++;
+              });
         
             
 
@@ -88,6 +129,7 @@ let subjectObjects = []
                     clearTimeout(this.timeoutId);
                     this.button.style.backgroundColor = color;
                 }
+                
                 reset() {
                     this.indegree = this.initial_indegree
                     this.is_taken = false
@@ -139,7 +181,7 @@ let subjectObjects = []
                 }
                 is_not_taken_click(){
                     this.is_taken = true
-                    this.change_color('green')
+                    this.change_color('#4CBB17')
                     this.neighbors.forEach(neighbor =>
                     neighbor.decrease_indegree());
                 }
@@ -193,6 +235,7 @@ let subjectObjects = []
                 deglow(){
                     this.change_color('');
                 }
+                
     
                 addClickListener(){
 
